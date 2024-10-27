@@ -36,7 +36,8 @@ Transform:
   m_LocalPosition: {x: -16.220299, y: -0.014648676, z: -0.01350094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6380848795322112646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1075496185362365747
@@ -374,3 +375,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b9a30dd3c8324e9d0203947135e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 468110965301738957}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 1
+--- !u!1 &8789051152565307678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6380848795322112646}
+  - component: {fileID: 6837729930717658801}
+  - component: {fileID: 2460620532658759013}
+  m_Layer: 9
+  m_Name: SwordAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6380848795322112646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789051152565307678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3726375049604489288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &6837729930717658801
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789051152565307678}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4724722, y: 0.5205956}
+      - {x: 0.3495345, y: 0.7514907}
+      - {x: -0.026270866, y: 1.0667287}
+      - {x: -0.33359814, y: 1.1630383}
+      - {x: -0.7646456, y: 1.1348029}
+      - {x: -1.1871877, y: 0.87786967}
+      - {x: -0.3782091, y: 0.46139348}
+      - {x: -0.24457073, y: 0.06487706}
+      - {x: -0.39381117, y: -0.38978457}
+      - {x: -0.64787436, y: -0.6060117}
+      - {x: -0.9244456, y: -0.7697336}
+      - {x: -0.18324697, y: -0.82236636}
+      - {x: 0.44935846, y: -0.31026894}
+      - {x: 0.5316267, y: 0.18059564}
+      - {x: 0.4609685, y: 0.5881343}
+  m_UseDelaunayMesh: 0
+--- !u!114 &2460620532658759013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789051152565307678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a02dca201675414b9e2cb8938466cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 15
+  knockBack: {x: 2, y: 0}
