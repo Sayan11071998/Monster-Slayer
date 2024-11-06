@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    Collider2D attackCollider;
-
     public float attackDamage = 10;
     public Vector2 knockBack = Vector2.zero;
-
-    private void Awake()
-    {
-        attackCollider = GetComponent<Collider2D>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
