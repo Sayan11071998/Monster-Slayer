@@ -7,6 +7,7 @@ public class Damagable : MonoBehaviour
 {
     public UnityEvent<float, Vector2> damagableHit;
     public UnityEvent damagableDeath;
+    public UnityEvent<float, float> healthChanged;
 
     Animator animator;
 
@@ -35,6 +36,7 @@ public class Damagable : MonoBehaviour
         private set
         {
             _health = value;
+            healthChanged?.Invoke(_health, MaxHealth);
             if (_health <= 0)
             {
                 IsAlive = false;

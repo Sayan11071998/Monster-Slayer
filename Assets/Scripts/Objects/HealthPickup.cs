@@ -23,7 +23,7 @@ public class HealthPickup : MonoBehaviour
     {
         Damagable damagable = collision.GetComponent<Damagable>();
 
-        if (damagable)
+        if (damagable && damagable.Health < damagable.MaxHealth)
         {
             bool wasHealed = damagable.Heal(healthRestore);
 
