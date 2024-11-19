@@ -7,6 +7,13 @@ public class HealthPickup : MonoBehaviour
     public float healthRestore = 20f;
     public Vector3 spinRotationSpeed = new Vector3(0, 180, 0);
 
+    AudioSource pickupSource;
+
+    private void Awake()
+    {
+        pickupSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         transform.eulerAngles += spinRotationSpeed * Time.deltaTime;
@@ -21,7 +28,12 @@ public class HealthPickup : MonoBehaviour
             bool wasHealed = damagable.Heal(healthRestore);
 
             if (wasHealed)
+            {
+                if (pickupSource)
+                    AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position, pickupSource.volume);
+
                 Destroy(gameObject);
+            }
         }
     }
 }
